@@ -1,0 +1,43 @@
+{% extends "cookbook/layout.html" %}
+{% load static %}
+
+{% block title %}Recipe{% endblock %}
+
+<h2>Get Recipe</h2>
+
+{% block body %}
+
+    {% if user.is_authenticated %}
+    <div class="my-3 pb-5">
+        <form action="{% url 'index' %}" id="scrape-form" method="POST">
+            {% csrf_token %}
+            <div class="flex flex-column pb-3">
+                <label class="white" for="recipe-url">Bring a Recipe from the net!</label>
+                <input autofocus type="url" placeholder="paste url to get recipe" id="scratcher" name="recipe-url"></input>
+            </div>
+            <input class="btn btn-primary btn-accent" type="submit" name="submit" value="Add Recipe!">
+        </form>
+    </div>
+    {% endif %}
+
+    <div class="flex wrap grid-box full">
+
+        {% for recipe in recipes %}
+            <div class="full">
+                <div class="recipe-tile full" style="background-image: url('{{ recipe.image }}');">    
+                    <div class="vigniette full flex flex-column">
+                        <h2 class="recipe-titles">{{ recipe.title }}</h2>
+                        <form action="{% url 'recipe' user.username recipe.title %}" class="self-end" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" value="recipe.pk">
+                            <input class="edit-link" type="submit" value="View Recipe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock body %}
+
+

@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'cookbook/images/pumpkin.svg' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'cookbook/styles.css' %}" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    {% block script %}{% endblock %}
+    
+</head>
+<body>
+    <div class="full">
+        <div class="">
+            
+            <nav class="navbar navbar-expand-lg brown nav-color">
+                <p class="logo"><a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'cookbook/images/logo.png' %}" alt="my cookbook" width="90" height="90"> <span id="my-cookbook"> My Cookbook </span></a></p>
+                <!-- Desktop -->
+                <div class="flex dsk ">
+                    <ul class="navbar-nav mr-auto brown">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'index' %}"><span style="text-transform: capitalize;">{{ user.username }}'s Recipes</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'new-recipe' %}">New Recipe</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'register' %}">Register</a>
+                            </li>
+                        {% endif %}
+                        
+                    </ul>
+
+                </div>
+                
+
+
+
+                <!-- Mobile -->
+                <div class="flex mob ">
+                    
+                    <div class="invisible" id="mob-menu">
+                        <ul class="navbar-nav mr-auto brown">
+                            
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}"><span style="text-transform: capitalize;">{{ user.username }}'s Recipes</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'new-recipe' %}">New Recipe</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <button id="mob-menu-btn" type="button" onclick="mobMenu()"><img src="{% static 'cookbook/images/mob.menu.svg' %}" alt="burger menu" width="50" height="50"></button>
+                </div>
+             
+            </nav>
+
+
+            <div class="messages ">
+                {% if message %}
+                    <!-- Error -->
+                    {% if message_type == 'error' %}
+                        <div class="error">{{ message }}</div>
+                    {% endif %}
+
+                    <!-- Success -->
+                    {% if message_type == 'success' %}
+                        <div class="success">{{ message }}</div>
+                    {% endif %}
+
+                {% endif %}
+            </div>
+
+            <div id="content-body" class="flex flex-column align-center">
+                {% block body %}{% endblock %}
+            </div>
+
+            <script>
+                function mobMenu() {
+                    const mobMenu = document.querySelector('#mob-menu');
+            
+                    mobMenu.classList.toggle('invisible');
+            
+                }
+            </script>
+            
+        </div>
+    </div>
+</body>
+</html>

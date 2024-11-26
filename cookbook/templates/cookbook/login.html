@@ -1,0 +1,33 @@
+{% extends "cookbook/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <h2 class="white">Login</h2>
+
+    {% if not user.is_authenticated %}
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Login">
+    </form>
+
+    {% else %}
+        <div class="white">
+            <p>You're already logged in as {{ user.username }}</p>
+            <p><a class="nav-link" href="{% url 'logout' %}">Log Out</a></p>
+        </div>
+
+
+    {% endif %}
+
+
+
+    <p class="white mt-3">Don't have an account? <a class="orange" href="{% url 'register' %}">Register here.</a></p>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "cookbook/layout.html" %}
+{% load static %}
+
+{% block title %}{{ recipe.title }}{% endblock %}
+
+{% block body %}
+<div class="container recipe-box">
+    <div class="full bg-center bg-cover">
+        
+       
+        <form action="{% url 'new-recipe' %}" class="bg-center bg-cover brown p-5" id="new-form" method="POST">
+            {% csrf_token %}
+            <div id="form-box" class="flex flex-column full p-5">
+                <h1 class="pb-5">New Custom Recipe</h1>
+
+                <div id="title-box">
+                    <h3>Title</h3>
+                    <input class="mb-5" name="recipe-title" id="recipe_title" type="text" required>
+                    <button id="check-title" class="add-btn mb-5 ml-2" type="button">Check for Duplicate</button>
+                </div>
+
+                <h3>Yields</h3>
+                <input class="mb-5" name="yields" id="yieds" type="text">
+
+                <h3>Ingredients</h3>
+                <div id="ingredients" class="my-3">
+
+                    <div id="ingredient-1" class="flex-responsive ingredient_listing">
+                        <div class="flex flex-column mr-2 mb-2-mobile">
+                            <input name="ingredient_name" id="ingredient_name" type="text" required>
+                            <label for="ingredient_name">Ingredient</label>
+                        </div>
+
+                        <div class="flex flex-column mx-2 mb-2-mobile">
+                            <input name="ingredient_quantity" id="ingredient_quantity" type="number" required>
+                            <label for="ingredient_quantity">Ingredient Quantity</label>
+                        </div>
+
+                        <div class="flex flex-column mx-2 mb-5 mb-2-mobile">
+                            
+                            <select name="ingredient_unit" id="ingredient_unit" required>
+                                <option value="" disabled selected>Metric Unit</option>
+                                <optgroup label="Weight"></optgroup>
+                                <option value="gr">gr</option>
+                                <optgroup label="Volume"></optgroup>
+                                <option value="ml">ml</option>
+                                <optgroup label="Piece"></optgroup>
+                                <option value="piece">piece</option>                     
+                            </select>
+                            <label for="ingredient_unit">Unit</label>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="add-btn my-5" id="add-ingredient" type="button"> + Add Ingredient</button>
+
+                <h3>Image url</h3>
+                <input class="mb-5" name="image_url" id="image_url" type="url">
+
+                <h3>Walkthrough</h3>
+                <ol id="steps">
+                    <li class="step-listing" id="step-1"><input class="mb-5" name="instructions" id="step-1" type="text"></li>
+                </ol>
+                <button class="add-btn my-5" id="add-step" type="button"> + Add Step</button>
+
+                <h3>Nutrients</h3>
+                <div id="nutrients">
+
+                    <div id="nutrient-1" class="nutrient-listing flex mb-5">
+                        <div class="flex flex-column mr-2">
+                            <input class="" name="nutrient-key" id="nutrient" type="text">
+                            <label for="nutrient">Nutrient</label>
+                        </div>
+                        <p class="mx-3">: </p>
+                        <div class="flex flex-column mr-2">
+                            <input name="nutrient-value" id="nutrient-value" type="text">
+                            <label for="nutrient-value">Value</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="add-btn my-5" id="add-nutrient" type="button"> + Add Nutrient</button>
+            </div>
+            
+            
+            <input id="new-save" class="btn-accent button float-r" type="submit" value="Save Recipe">
+        </form>
+        
+    </div>
+</div>
+
+<!-- Side Calculators -->
+<section class="calculators">
+    <div id="calculator" class="calc-1 my-3" style="background-image: url('')">
+        <h3>Volume</h3>
+        <form id="volume-form">
+            <div class="flex">
+                <input id="volume-number" type="number" name="volume-input" onkeyup="volumeCalculator()" step="0.01">
+                <select name="volume-unit" id="volume-unit" onchange="volumeCalculator()">
+                    <option value="cup">cup</option>
+                    <option value="tbsp">Tablespoon</option>
+                    <option value="tsp">tsp</option>
+                    <option value="gallon">gallon</option>
+                </select>
+            </div>
+            <p><span id="volume-result"></span> <b>ml</b></p>
+        </form>
+    </div>
+    <div id="calculator" class="calc-2"> 
+        <h3>Weight</h3>
+        <form id="weight-form">
+            <div class="flex">
+                <input id="weight-number" type="number" name="weight-input" onkeyup="weightCalculator()" step="0.01">
+                <select name="weight-unit" id="weight-unit" onchange="weightCalculator()">
+                    <option value="oz">oz</option>
+                    <option value="lb">lb</option>
+                    <option value="st">stones</option>
+                </select>
+            </div>
+            <p><span id="weight-result"></span> <b>gr</b></p>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'cookbook/new-form.js' %}"></script>
+{% endblock %}
