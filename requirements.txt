@@ -1,5 +1,5 @@
 Django 
-recipe-scrapers
+recipe-scrapers==14.52.0
 
 # from django.urls import path
 # from django.contrib.auth.models import AbstractUser
