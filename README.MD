@@ -22,19 +22,16 @@ This project focuses on one model, apart from User. The complexity here lies in 
 #### COMPLEXITY
 Below is a list of things that are new to this project and / or more complex than similar actions in previous projects.
 
-
-1. Setting up a project from the start and learning about details such as having to set up Django's model *class User(AbstractUser)* in settings.py **before** the first migration. 
-2. Working with JSON to store and retrieve more complex data structures, such as dictionaries, to and from the database
-3. Iterating queryDicts and finding how I can form the needed data structure to match the one I need for my model and HTML.
-4. Iterating queryDicts where *value* is a **list of values**.
-5. Converting queryDicts to python Dicts when necessary
-6. Using **Ajax** to **retrieve information**, send it to the **server for calculations**, according to case, then form the required **dictionary**, **JSON** it, and send it back to JS. Then **parse** it in JS to retrieve the dictionary data, and **iterate** them to print the page with the right information without refreshing it.  
-7. Working with user feedback, complete with a message and coordinating color for error or success. 
-8. Following Django documentation to send a **csrf token** with Ajax.
-9. Creating a **separate menu for mobile** with CSS and JavaScript
-10. Having calculators on the page do simple calculations in JavaScript to **interactively return results onkeyup**, without the need to submit anything
-11. Create a **form** where the user can **dynamically create as many input rows as needed**, and then iterate it and form the values into the **list of dictionaries** that should be stored in the DB.
-12. New input fields have autofocus upon creation
+-Project Setup & Django Configuration: Setting up the project from scratch, including defining User(AbstractUser) in settings.py before the first migration.
+-Handling Complex Data in Django: Storing and retrieving structured data (e.g., dictionaries) using JSON fields in the database.
+-Working with QueryDicts: Iterating QueryDicts, handling cases where values are lists, and converting them into standard Python dictionaries when necessary.
+-AJAX & Asynchronous Processing: Using AJAX to send and retrieve data, process it server-side, convert it to JSON, and dynamically update the page without refreshing.
+-User Feedback System: Implementing real-time user feedback with messages and coordinated error/success colors.
+-CSRF Handling in AJAX: Implementing Django’s CSRF token to secure AJAX requests.
+-Responsive UI Design: Creating a separate mobile menu using CSS and JavaScript.
+-Interactive Frontend Calculations: Implementing real-time JavaScript calculations that update on keyup events without requiring form submission.
+-Dynamic Form Fields: Allowing users to dynamically generate input rows, then processing and storing them as a list of dictionaries in the database.
+-User Experience Enhancements: Ensuring new input fields receive autofocus upon creation for seamless interaction.
 
 
 ## WHAT'S CONTAINED IN EACH FILE
