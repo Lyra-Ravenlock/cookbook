@@ -22,16 +22,16 @@ This project focuses on one model, apart from User. The complexity here lies in 
 #### COMPLEXITY
 Below is a list of things that are new to this project and / or more complex than similar actions in previous projects.
 
--Project Setup & Django Configuration: Setting up the project from scratch, including defining User(AbstractUser) in settings.py before the first migration.
--Handling Complex Data in Django: Storing and retrieving structured data (e.g., dictionaries) using JSON fields in the database.
--Working with QueryDicts: Iterating QueryDicts, handling cases where values are lists, and converting them into standard Python dictionaries when necessary.
--AJAX & Asynchronous Processing: Using AJAX to send and retrieve data, process it server-side, convert it to JSON, and dynamically update the page without refreshing.
--User Feedback System: Implementing real-time user feedback with messages and coordinated error/success colors.
--CSRF Handling in AJAX: Implementing Django’s CSRF token to secure AJAX requests.
--Responsive UI Design: Creating a separate mobile menu using CSS and JavaScript.
--Interactive Frontend Calculations: Implementing real-time JavaScript calculations that update on keyup events without requiring form submission.
--Dynamic Form Fields: Allowing users to dynamically generate input rows, then processing and storing them as a list of dictionaries in the database.
--User Experience Enhancements: Ensuring new input fields receive autofocus upon creation for seamless interaction.
+- Project Setup & Django Configuration: Setting up the project from scratch, including defining User(AbstractUser) in settings.py before the first migration.
+- Handling Complex Data in Django: Storing and retrieving structured data (e.g., dictionaries) using JSON fields in the database.
+- Working with QueryDicts: Iterating QueryDicts, handling cases where values are lists, and converting them into standard Python dictionaries when necessary.
+- AJAX & Asynchronous Processing: Using AJAX to send and retrieve data, process it server-side, convert it to JSON, and dynamically update the page without refreshing.
+- User Feedback System: Implementing real-time user feedback with messages and coordinated error/success colors.
+- CSRF Handling in AJAX: Implementing Django’s CSRF token to secure AJAX requests.
+- Responsive UI Design: Creating a separate mobile menu using CSS and JavaScript.
+- Interactive Frontend Calculations: Implementing real-time JavaScript calculations that update on keyup events without requiring form submission.
+- Dynamic Form Fields: Allowing users to dynamically generate input rows, then processing and storing them as a list of dictionaries in the database.
+- User Experience Enhancements: Ensuring new input fields receive autofocus upon creation for seamless interaction.
 
 
 ## WHAT'S CONTAINED IN EACH FILE
