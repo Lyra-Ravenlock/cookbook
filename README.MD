@@ -11,14 +11,6 @@ Most of the previous projects focused on working with a lot of Models and combin
 
 This project focuses on one model, apart from User. The complexity here lies in working with lists of dictionaries, using Json to move data between the DB, the server and tha JS, creating dynamic forms, recieving Query Dictionaries  whith list values, and performing simple calculations dynamically, by sending data to the server via Ajax and back to update the page, seamlessly.
 
-
-#### DISTINCTIVENESS REQUIREMENTS
-* The app has no social aspect or any other characteristic of such an app, it's **not** a social network app in any way.
-* It's not an e-commerce either, nor does it share any of the mechanics of one.
-* it's not based on the old Pizza Project, which was a kind of e-commerce itself.
-* It's not similar in nature or purpose to any of the previous projects.
-* It required approximately more than 3 times the time previous projects took. A lot of that time was spent searching for ways to achieve things I hadn't done before such as working with queryDicts with lists instead of items, or setting up Django's User model.
-
 #### COMPLEXITY
 Below is a list of things that are new to this project and / or more complex than similar actions in previous projects.
 
@@ -32,6 +24,14 @@ Below is a list of things that are new to this project and / or more complex tha
 - Interactive Frontend Calculations: Implementing real-time JavaScript calculations that update on keyup events without requiring form submission.
 - Dynamic Form Fields: Allowing users to dynamically generate input rows, then processing and storing them as a list of dictionaries in the database.
 - User Experience Enhancements: Ensuring new input fields receive autofocus upon creation for seamless interaction.
+
+
+#### DISTINCTIVENESS REQUIREMENTS
+* The app has no social aspect or any other characteristic of such an app, it's **not** a social network app in any way.
+* It's not an e-commerce either, nor does it share any of the mechanics of one.
+* it's not based on the old Pizza Project, which was a kind of e-commerce itself.
+* It's not similar in nature or purpose to any of the previous projects.
+* It required approximately more than 3 times the time previous projects took. A lot of that time was spent searching for ways to achieve things I hadn't done before such as working with queryDicts with lists instead of items, or setting up Django's User model.
 
 
 ## WHAT'S CONTAINED IN EACH FILE
