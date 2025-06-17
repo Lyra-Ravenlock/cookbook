@@ -1,0 +1,212 @@
+* { font-family: "Poppins", sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: "Playfair Display", serif; }
+
+body { 
+    min-height: 100vh;
+    background-image: url("./images/home-bg.ef6000a603fc.webp");
+    background-size: cover;
+    background-repeat: repeat;
+    padding-top: 130px;
+    
+ }
+
+ /* Layout */
+.nav-color {  box-shadow: 5px 5px 20px 0px black; }
+#content-body { padding: 3%; }
+.navbar {
+    height: 130px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #24383f;
+    background-size: cover;
+    background-position: 100% 100%;
+    color: #2c1d13;
+}
+
+/* Navbar & Menu*/
+.navbar { justify-content: space-between; padding: 0 10%; }
+.navbar a { color: #ffffff; }
+.navbar a:hover {color: #ffe95f;}
+#mob-menu-btn img {filter: invert(100%) sepia(2%) saturate(0%) hue-rotate(192deg) brightness(105%) contrast(102%);}
+.mob a {color: #2c1d13;}
+
+@media only screen and (min-width: 1000px) {
+    .mob {visibility: hidden;}
+    .dsk {visibility: visible;}
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .dsk {visibility: hidden;}
+    .mob {visibility: visible;}
+
+    #my-cookbook {display: none;}
+
+}
+
+#mob-menu {
+    width: 271px;
+    height: 394px;
+    position: absolute;
+    padding: 5em;
+    top: 130px;
+    right: 40px;
+    background-image: url('http://127.0.0.1:8000/static/cookbook/images/parchment-bg-mob.webp');
+    background-size: contain;
+    filter: drop-shadow(5px 5px 20px black);
+    background-repeat: no-repeat;
+
+}
+
+#mob-menu-btn { background-color: transparent; }
+#mob-menu-btn image { width: 50px; }
+
+
+
+/* Index */
+ #scratcher {width: 400px;}
+ 
+
+/* Common */
+.full { width: 100%; height: 100%; }
+.flex, .flex-responsive { display: flex; }
+.flex-column { flex-direction: column; }
+.flex-end {justify-content: flex-end;}
+.self-end {align-self: flex-end;}
+.align-center {align-items: center;}
+.wrap { flex-wrap: wrap; }
+.bg-center { background-position: center; }
+.bg-cover { background-size: cover; }
+.float-r {float: right;}
+.underlined {text-decoration: underline; cursor: pointer;}
+button {cursor: pointer;}
+
+/* Colors */
+.orange { color: orange; }
+.brown { color: #2c1d13 }
+.gray { color: #545b62 }
+.white { color: #ffffff; }
+
+/* Buttons & Forms*/
+.btn-primary {background-color: #24383f; border: 1px solid orange;}
+.btn-link { color: #545b62; font-weight: 500; text-decoration: underline; background-color: transparent; border: none;}
+.btn-delete {color: red;}
+.btn-link:hover { color: greenyellow; }
+.ingredient-name { min-width: 300px; }
+.number-field { width: 100px; }
+.add-btn { background-color: #00000020; width: 200px; }
+
+
+input.btn-accent { background-color: #24383f; color: #ffe95f; box-shadow: 5px 5px 20px 0px black; border: none; cursor: pointer; padding: 1em; border-radius: 5px;}
+input.btn-accent:hover { background-color: rgb(137, 204, 38); box-shadow: none; color: rgb(97, 63, 1); transition: all 0.5s; }
+
+.edit-form { align-self: center; }
+
+
+/* Messages */
+div.messages { margin: 3% 0 0 3%; max-width: 500px; border-radius: 5px; }
+.error { background-color: red; padding: 10px; color: white; }
+.success { background-color: greenyellow; padding: 10px; color: #2b2b2b; }
+
+/* Forms */
+#new-form { background-image: url("./images/parchment-bg-mob.8b5e99df0379.webp"); }
+#new-form input:not(.button) { background-color: transparent; border: none; border-bottom: 1px solid #545b62; color: #545b62; }
+#new-form input:focus-visible { border: none; border-bottom: 1px solid #545b62; outline: none; }
+
+
+/* Form Input Visibility */
+.invisible { display: none; height: 0; }
+
+/* Recipe Page */
+.title-bar { 
+    box-shadow: 3px 26px 43px -21px rgba(0,0,0,0.58); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    background-color: gray;
+    background-blend-mode: multiply;
+}
+
+.recipe-box { color: white; background-size: cover; padding: 2%; }
+.bgn-color-recipe { background-color: #F4E9D2; }
+.parchment { background-image: url("./images/parchment-bg-mob.8b5e99df0379.webp"); background-repeat: no-repeat; background-size: cover; }
+@media only screen and (min-width: 1000px) {
+   .parchment {padding: 0 50px 50px 50px;}  
+}
+@media only screen and (max-width: 800px) {
+    .parchment { background-image: none; padding: 0 50px 50px 50px; background-color: #f1d5a3; }
+}
+.recipe-content { color: #2c1d13; }
+
+.radio-selection { position: relative; left: 30px; }
+
+.js-alert { padding: 1em; }
+
+/* Recipe edit form */
+@media only screen and (min-width: 1100px) {
+    input.ingredient-name { width: 60%; } 
+    input.number-field { width: 20%; }
+    input.unit-field { width: 20%; }
+}
+
+
+
+/* Recipe Tiles */
+.grid-box > * { max-width: 31%; margin: 1%; }
+@media only screen and (max-width: 800px) {
+    .grid-box > * { max-width: 98%; margin: 1%; }
+}
+.recipe-tile { 
+    border: 1px solid gray; 
+    box-shadow: 5px 5px 20px 0px black; 
+    
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    min-height: 230px;
+ }
+.vigniette { 
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    background: #00000040;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7343137938769257) 0%, rgba(0,0,0,0.6446779395351891) 24%, rgba(0,0,0,0.5691794996995192) 59%, rgba(0,0,0,0) 92%);
+ }
+
+.recipe-image { max-width: 300px; height: 100%; }
+.recipe-titles { color: white; text-align: center; }
+.edit-link { background-color: #24383f; border: #ffe95f; color: #ffe95f; padding: 1em; margin-top: 1em;}
+
+/* Calculators*/
+@media only screen and (min-width: 1300px) {
+    .calculators { position: fixed; right: 20px; top: 20%; }
+}
+
+#calculator { background-color: #545b62; padding: 2em; border-radius: 5px; }
+.calc-1, .calc-2 { background-size: cover; background-repeat: no-repeat; color: white; }
+
+
+/* Delete Div*/
+#delete-alert {
+    height: 200px;
+    background-color: #eccb97;
+    display: block;
+    width: 50%;
+    border: 1px solid #2c1d13;
+    border-radius: 5px;
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 20px #000;
+    
+}
+
+
+@media only screen and (max-width: 760px) {
+    .flex-responsive {display: flex; flex-direction: column;}
+    .mb-1-mobile {margin-bottom: 1em;}
+    .mb-2-mobile {margin-bottom: 2em;}
+}
