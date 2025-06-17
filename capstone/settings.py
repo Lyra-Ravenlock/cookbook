@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'django-insecure-39f^#^+dix5#p-8u@d3v^b1k*ttbp&s-1(wlw(r1ybi$cbniqk' # dev
-SECRET_KEY = os.environ.get('SECRET_KEY', 'v%nc9kn9x4wx_#nhro=2k*hzdk-6#6h8t=e9!@bdr6tnr4n+-_')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'v%nc9kn9x4wx_#nhro=2k*hzdk-6#6h8t=e9!@bdr6tnr4n+-_') # Production, Render
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 import os
 ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']  # Accept any subdomain on Render, and locally
@@ -121,6 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
