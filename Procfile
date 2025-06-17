@@ -1,1 +1,1 @@
-web: gunicorn cookbook.wsgi:application
+web: gunicorn capstone.wsgi:application
