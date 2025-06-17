@@ -2,4 +2,3 @@ Django>=4.2,<5.0
 gunicorn
 psycopg2-binary
 recipe-scrapers==14.52.0
-
