@@ -3,3 +3,4 @@ gunicorn
 psycopg2-binary
 recipe-scrapers==14.52.0
 whitenoise
+dj-database-url
