@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         
-        url = `http://127.0.0.1:8000/calculate/${username}/${recipeId}`;
+        url = `/calculate/${username}/${recipeId}`;
         
 
         const csrftoken = getCookie('csrftoken');
