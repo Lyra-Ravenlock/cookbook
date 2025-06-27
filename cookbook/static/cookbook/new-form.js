@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
         const csrftoken = getCookie('csrftoken');
 
-        fetch('http://127.0.0.1:8000/check-title', {
+        fetch('/check-title', {
             method: 'POST',
 
             // From django documentation: https://docs.djangoproject.com/en/4.2/howto/csrf/
