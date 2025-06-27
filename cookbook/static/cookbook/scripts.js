@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(baseIngredient);
         console.log(baseValue);
 
-        url = 'http://127.0.0.1:8000/calculate/' + recipeId;
+        url = '/calculate/' + recipeId;
         console.log(url);
         fetch(url, {
             method: 'POST',
